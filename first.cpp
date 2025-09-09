@@ -6,4 +6,5 @@ int main(){
     cin>>a>>b;
     c = a + b;
     cout<<"Sum of "<<a<<" and "<<b<<" is "<<c<<endl;
+    printf("heelo world 2");
 }
