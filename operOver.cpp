@@ -19,9 +19,28 @@ class Complex{
     }
     Complex operator - (){
         Complex temp;
-        temp.a = ++a;
-        temp.b = ++b;
+        temp.a = -a;
+        temp.b = -b;
         return temp;
+    }
+};
+
+class Integer {
+    private :
+    int x;
+    public:
+    void setData(int a){ x = a;}
+    void showData(){cout<<"x = "<<x<<endl;}
+
+    Integer operator ++(){ //preincrement
+        Integer i;
+        i.x = ++x;
+        return i;
+    }
+     Integer operator ++(int){ //postincrement
+        Integer i;
+        i.x = x++;
+        return i;
     }
 };
 int main(){
@@ -43,4 +62,14 @@ int main(){
     // c4 =- c5;
     c5 = c4.operator-();
     c5.showData();
+
+    Integer i1,i2;
+    i1.setData(3);
+    i1.showData();
+    i2 = ++i1; //preincrement
+    // i2 = i1++;//postincrement
+    
+    // i2 = i1.operator++();
+    i1.showData();
+    i2.showData();
 }
